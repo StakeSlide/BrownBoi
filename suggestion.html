@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suggestion Form</title>
+</head>
+<body>
+  <h2>Submit Your Suggestion</h2>
+  <form id="suggestionForm">
+    Telegram Username:<br>
+    <input type="text" name="username" required><br><br>
+    Suggestion (max 3000 chars):<br>
+    <textarea name="suggestion" rows="10" cols="50" maxlength="3000" required></textarea><br><br>
+    <button type="submit">Submit</button>
+  </form>
+  <p id="msg"></p>
+  <script>
+    const form = document.getElementById('suggestionForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = form.username.value;
+      const suggestion = form.suggestion.value;
+      const blob = new Blob(
+        [`Username: ${username}\n\nSuggestion:\n${suggestion}`],
+        {{ type: 'text/plain' }}
+      );
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = `${username}-suggestion.txt`;
+      link.click();
+      document.getElementById('msg').textContent = 'Suggestion downloaded as a file!';
+    });
+  </script>
+</body>
+</html>

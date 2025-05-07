@@ -1,0 +1,41 @@
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.main {
+  padding: 20px;
+}
+.main-image {
+  width: 90%;
+  max-width: 900px;
+  cursor: pointer;
+}
+.buttons {
+  margin-top: 20px;
+}
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  background: #ff6600;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.btn:hover {
+  background: #ff8533;
+}
+.socials {
+  margin-top: 30px;
+}
+.socials a {
+  color: #0ff;
+  text-decoration: none;
+  margin: 0 10px;
+}
